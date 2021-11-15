@@ -9,7 +9,7 @@ const Header = () =>{
         <NavStyle>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/">About</Link></li>
-            <h2>Empowering Small Business owners in South Africa</h2>
+            <h2>Empowering small business owners in South Africa</h2>
             <li><Link to="/">Login</Link></li>
             <li><Link to="/">FAQ</Link></li>
         </NavStyle>
