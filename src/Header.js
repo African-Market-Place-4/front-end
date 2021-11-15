@@ -6,11 +6,11 @@ const Header = () =>{
     return(
     <HeaderStyle>
         <NavStyle>
-            <li><Link to="/">Home</Link></li>
+            {/* <li><Link to="/">Home</Link></li>
             <li><Link to="/">About</Link></li>
             <h2>Empowering Small Business owners in South Africa</h2>
             <li><Link to="/">Login</Link></li>
-            <li><Link to="/">FAQ</Link></li>
+            <li><Link to="/">FAQ</Link></li> */}
         </NavStyle>
     </HeaderStyle>)
 }
