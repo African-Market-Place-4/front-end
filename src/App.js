@@ -1,12 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import React from 'react';
+import { Route, Redirect, Routes } from "react-router-dom";
+import styled from 'styled-components';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <Header/>
+      <h1>I am app!</h1>
     </div>
   );
 }
