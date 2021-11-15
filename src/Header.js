@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Header = () =>{
     return(
     <HeaderStyle>
+        <h1>African Marketplace</h1>
         <NavStyle>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/">About</Link></li>
@@ -17,12 +18,19 @@ const Header = () =>{
 export default Header;
 
 const HeaderStyle = styled.div`
-    padding: 1em;
     background-color: #fcd5ce;
+    flex-direction:column;
     display:flex;
     align-items: center;
     justify-content: center;
     width:100%;
+
+    h1{
+        background-color:white;
+        width:100%;
+        font-size:4rem;
+        margin:0;
+    }
 
     p {
         font-weight: bold;
@@ -35,10 +43,11 @@ const NavStyle = styled.ul`
     justify-content:space-around;
     align-items:center;
     width:1000px;
+    height:20px;
   li {
         display: flex;
         flex-direction:row;
-        padding: 0.3rem 1rem;
+        padding: 0;
         
         a {
             text-decoration: none;
