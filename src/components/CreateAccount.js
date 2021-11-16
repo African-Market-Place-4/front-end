@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 
-function CreateAcctForm = props => {
+const CreateAccount = (props) => {
     const [user, setUser] = useState({
         username:"",
         password:""
@@ -16,10 +16,9 @@ function CreateAcctForm = props => {
     const submitForm = event => {
        
     }
-}
 
     return (
-        <CreateAcctContainer>
+        <div className="create-account-page">
             <form className="create-acct-form" onSubmit={submitForm}>
                 <div className="create-form-container">
                     <h2>Create Account</h2>
@@ -37,11 +36,13 @@ function CreateAcctForm = props => {
                         placeHolder="Enter Password"
                         onChange={handleChanges}
                         value={user.password} />
+                    </div>
             </form>
             <div>
                 <button id="create-acct-button">Create Account</button>
             </div>
-        </CreateAcctContainer>
+            {/* PAGE CONTAINER ENDS HERE */}
+        </div>
     )
-
-export default CreateAcctForm;
+    }
+export default CreateAccount;
