@@ -30,7 +30,7 @@ function CreateAcctForm = props => {
                         placeHolder="enter Username"
                         onChange={handleChanges}
                         value={user.username} />
-                    <label className="create-label" ftmlFor="password">Password</label>
+                    <label className="create-label" htmlFor="password">Password</label>
                     <input className="create-input" id="password"
                         type="password"
                         name="password"
