@@ -8,14 +8,14 @@ const Header = () =>{
         <h1>African Marketplace</h1>
         <NavStyle>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/">About</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
             <h2>Empowering small business owners in South Africa</h2>
-            <li><Link to="/">Login</Link></li>
-            <li><Link to="/">FAQ</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/dashboard">Dash</Link></li>
         </NavStyle>
     </HeaderStyle>)
 }
-export default Header;
+export default Header
 
 const HeaderStyle = styled.div`
     background-color: #fcd5ce;
