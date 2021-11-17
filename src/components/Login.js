@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './login.css'
 
 
 export default class Login extends Component {
@@ -35,13 +36,13 @@ export default class Login extends Component {
                 <h3>Login</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input 
-                        type="email" 
-                        value={this.state.email}
-                        onChange={this.handleEmailChange}
+                        type="username" 
+                        value={this.state.username}
+                        onChange={this.handleUsernameChange}
                         className="form-control" 
-                        placeholder="Enter email" 
+                        placeholder="Enter username" 
                         />
                 </div>
 
@@ -67,7 +68,7 @@ export default class Login extends Component {
 
                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
                 <p className="forgot-password text-right">
-                    Forgot <span>password?</span>
+                    <a href="#">Forgot Password</a>
                 </p>
             </form>
         )
