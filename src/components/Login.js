@@ -41,6 +41,8 @@ export default class Login extends Component {
    
     render() {
         return (
+
+        <div className='market'>
             <form onSubmit={this.handleSubmit}>
                 <h3>Login</h3>
 
@@ -80,6 +82,7 @@ export default class Login extends Component {
                     <a href="#">Forgot Password</a>
                 </p>
             </form>
+        </div>
         )
     }
 }
