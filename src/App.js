@@ -7,6 +7,7 @@ import {Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage'
 
@@ -30,6 +31,7 @@ function App() {
           </Route>
 
           </Routes>
+          <Footer/>
         </div>
       </div>
   );
