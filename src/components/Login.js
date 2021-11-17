@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { Component } from "react";
+import { ThemeConsumer } from "styled-components";
 import './login.css'
 
 
@@ -28,6 +30,13 @@ export default class Login extends Component {
     handleSubmit = event =>{
         alert(`${this.state.username} ${this.state.password}`)
         event.preventDefault()
+        axios.post('baseURL/auth/login',this.state)
+        .then(resp=>{
+            console.log('response from axios',resp)
+            })
+            .catch(err=>{
+                console.log('this is a catch err', err)
+            })
     }
    
     render() {
@@ -67,7 +76,7 @@ export default class Login extends Component {
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block submit">Submit</button>
-                <p className="forgot-password text-right">
+                <p className="forgot-password text-right password">
                     <a href="#">Forgot Password</a>
                 </p>
             </form>
