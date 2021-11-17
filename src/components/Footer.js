@@ -1,5 +1,4 @@
 import React from "react";
-import "./footer.css";
 import styled from 'styled-components';
 
 export default function Footer(props) {
@@ -15,7 +14,7 @@ export default function Footer(props) {
     )
 }
 
-const FooterStyle = styled.footer`
+const FooterStyle = styled.div`
     background-color: #fcd5ce;
     flex-direction:column;
     display:flex;

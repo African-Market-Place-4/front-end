@@ -29,14 +29,6 @@ export default class Login extends Component {
         event.preventDefault()
     }
    
-
-
-
-
-
-
-
-    
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -75,7 +67,7 @@ export default class Login extends Component {
 
                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <span>password?</span>
                 </p>
             </form>
         )

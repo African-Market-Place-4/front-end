@@ -1,5 +1,10 @@
 //Dashboard goes here! Assuming User has logged in
 
+import React from 'react';
+import {useState} from 'react';
+import AddItem from './AddItem';
+
+
 const Dashboard = () => {
 
     const dummyData = [
@@ -29,19 +34,23 @@ const Dashboard = () => {
     }
 ]
 
+const [items, setItems] = useState(dummyData)
+
     return (
-        <div>I am a dashboard
-
-        Displays marketplace items in one section - map through dummydata
-        Displays users items in another section
-        create item form
-
-        item cards need: 
-        item name
-        item description 
-        item price
-        item location
-
+        <div>
+            <AddItem/>
+            {
+                items.map(item => {
+                    return (
+                    <div>
+                        <h2>{item.name}</h2>
+                        <p>{item.description}</p>
+                        <p>{item.price}</p>
+                        <p>{item.location}</p>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
