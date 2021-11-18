@@ -14,7 +14,19 @@ const CreateAccount = (props) => {
         });
     };
     const submitForm = event => {
-       
+        event.preventDefault()
+		axiosWithAuth()
+			.post('', {
+				username: user.username,
+				password: user.password
+			})
+			.then(function (response) {
+				history.push("/");
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	};
     }
 
     return (
