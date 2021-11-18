@@ -15,7 +15,8 @@ export default function Footer(props) {
 }
 
 const FooterStyle = styled.div`
-    background-color: #fcd5ce;
+    background-color:rgba(14, 12, 12, 0.956);;
+    color:white;
     flex-direction:column;
     display:flex;
     align-items: center;
@@ -25,6 +26,8 @@ const FooterStyle = styled.div`
     address{
         display:flex;
         flex-direction:column;
+        justify-content:center;
+        align-items:center;
     }
     p {
         font-weight: bold;

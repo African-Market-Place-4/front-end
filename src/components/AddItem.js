@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 const AddItem = () => {
+    let navigate = useNavigate();
     const [item, setItem] = useState({
         name: '',
+        price_usd: 0,
         description: '',
-        price: '',
-        location: ''
+        seller:0
     });
 
     const handleChanges = event => {
@@ -18,8 +21,16 @@ const AddItem = () => {
     };
 
     const submitForm = event => {
-       
+        event.preventDefault();
+        axios.post('https://african-marketplace-4.herokuapp.com/api/items', item)
+            .then(resp=>{
+                navigate('/')
+            })
+            .catch(err=>{
+                console.log('error from axios',err)
+            })
     }
+    
 
     return (
         <div>
@@ -30,7 +41,7 @@ const AddItem = () => {
                     <input id="name"
                         type="text"
                         name="name"
-                        placeHolder="enter Name"
+                        placeholder="enter Name"
                         onChange={handleChanges}
                         value={item.name} />
                         <br/>
@@ -38,31 +49,31 @@ const AddItem = () => {
                     <input id="description"
                         type="text"
                         name="description"
-                        placeHolder="Provide Description"
+                        placeholder="Provide Description"
                         onChange={handleChanges}
                         value={item.description} />
                         <br/>
                         <label>Price</label>
-                    <input id="price"
+                    <input id="price_usd"
                         type="text"
-                        name="price"
-                        placeHolder="Enter Price"
+                        name="price_usd"
+                        placeholder="Enter Price"
                         onChange={handleChanges}
-                        value={item.price} />
+                        value={item.price_usd} />
                         <br/>
-                        <label>Location</label>
+                        <label>Seller</label>
                         
-                    <input id="location"
+                    <input id="seller"
                         type="text"
-                        name="location"
-                        placeHolder="Enter Location"
+                        name="seller"
+                        placeholder="Enter seller"
                         onChange={handleChanges}
-                        value={item.location} />
+                        value={item.seller} />
                     </div>
             </form>
             <div>
                 <br/>
-                <button>Add Item</button>
+                <button onClick={submitForm}>Add Item</button>
             </div>
             {/* PAGE CONTAINER ENDS HERE */}
         </div>
