@@ -1,5 +1,8 @@
+import axios from "axios";
 import React, { Component } from "react";
-import axios from 'axios';
+import { ThemeConsumer } from "styled-components";
+import './login.css'
+
 
 
 
@@ -39,6 +42,8 @@ export default class Login extends Component {
    
     render() {
         return (
+
+        <div className='market'>
             <form onSubmit={this.handleSubmit}>
                 <h3>Login</h3>
 
@@ -73,11 +78,12 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <span>password?</span>
+                <button type="submit" className="btn btn-primary btn-block submit">Submit</button>
+                <p className="forgot-password text-right password">
+                    <a href="#">Forgot Password</a>
                 </p>
             </form>
+        </div>
         )
     }
 }
