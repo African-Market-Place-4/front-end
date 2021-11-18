@@ -4,8 +4,10 @@ import { ThemeConsumer } from "styled-components";
 import './login.css'
 
 
-export default class Login extends Component {
 
+
+export default class Login extends Component {
+    
     constructor(props) {
         super(props)
     
@@ -28,14 +30,13 @@ export default class Login extends Component {
     }
 
     handleSubmit = event =>{
-        alert(`${this.state.username} ${this.state.password}`)
-        event.preventDefault()
-        axios.post('baseURL/auth/login',this.state)
-        .then(resp=>{
-            console.log('response from axios',resp)
+        event.preventDefault();
+        axios.post('https://african-marketplace-4.herokuapp.com/api/auth/login', this.state)
+            .then(resp=>{
+                 localStorage.setItem('token',resp.data.token);
             })
             .catch(err=>{
-                console.log('this is a catch err', err)
+                console.log(err)
             })
     }
    
