@@ -7,9 +7,9 @@ const LandingItem = (props) =>{
     return(
     <ItemStyle>
         <div>
-            <p><span>Item:</span> {item.name}</p>
-            <p><span>Price:</span> {item.price_usd}</p> 
-            <p><span>Description:</span> {item.description}</p>
+            <p><StyledSpan>Item:</StyledSpan> {item.name}</p>
+            <p><StyledSpan>Price:</StyledSpan> {item.price_usd}</p> 
+            <p><StyledSpan>Description:</StyledSpan> {item.description}</p>
             {/* <p><span>Location:</span> {item.location}</p>  */}
         </div>
     </ItemStyle>
@@ -21,17 +21,27 @@ const ItemStyle = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    border:2px solid black;
+    /* border:3px solid black; */
     width:250px;
     height:250px;
     margin:20px;
+    background-color:rgba(255, 255, 255, 0.919);
 
-    span{
-        font-weight:bold;
     }
     img{
         width:150px;
         height:150px;
         object-fit: cover;
     }
+    p{
+        font-size:1.5rem;
+    }
+`
+const StyledSpan=styled.span`
+    font-weight:bold;
+        &:hover{
+            text-decoration:none;
+            text-decoration-color:none;
+            cursor:text;
+        }
 `

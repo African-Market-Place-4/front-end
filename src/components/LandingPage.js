@@ -32,40 +32,13 @@ const initialItems = [
         description: 'white',
         seller: 'Italy'
     },
-    {
-        product_id: 5,
-        name: 'Chocolate',
-        price_usd: '$2',
-        description: 'brown',
-        seller: 'Germany'
-    },
-    {   
-        product_id:6,
-        name: 'Rice',
-        price_usd: '$4',
-        description: 'white',
-        seller: 'Spain'
-    },
-    {
-        product_id:7,
-        name: 'Wheat',
-        price_usd: '$5',
-        description: 'golden',
-        seller: 'US'
-    },
-    {
-        product_id:8,
-        name: 'Wine',
-        price_usd: '$10',
-        description: 'white',
-        seller: 'New Zealand'
-    }
+
 ]
 
 
 const LandingPage = () =>{
     const[items, setItems]=useState(initialItems)
-    const [isToggled,setIsToggled]=useState(false)
+    const [isToggled,setIsToggled]=useState(true)
 
     // Need to do!!
     // 1)Make sure we are making axios call to the correct address.
@@ -73,16 +46,15 @@ const LandingPage = () =>{
     // 3)setItems to correct response data.
     
 
-    // useEffect(()=> {
-    //     axios.get('BASEURL/items')
-    //         .then(resp=>{
-    //             console.log(resp)  
-    //             setItems(resp)
-    //         })
-    //         .catch(err=>{
-    //             console.log(err)
-    //         })
-    // }, []);
+    useEffect(()=> {
+        axios.get('https://african-marketplace-4.herokuapp.com/api/items')
+            .then(resp=>{
+                setItems(resp.data)
+            })
+            .catch(err=>{
+                console.log('this is err',err)
+            })
+    }, []);
 
     const toggle=()=>{
         setIsToggled(!isToggled)
@@ -106,8 +78,10 @@ const LandingPage = () =>{
             })}
         </ListStyle>
         }
-        <p>Click <span onClick={toggle}>HERE</span> {isToggled ? 'to browse more items...' : 'to hide items...'}</p>
-        <Link to="/login" className='styledLink'>or click <span>HERE</span> to list your own! </Link>
+        <FuncStyle>
+            <p>Click <span onClick={toggle}>HERE</span> {isToggled ? 'to browse more items...' : 'to hide items...'}</p>
+            <p>or click <Link to="/additem" className='styledLink'><span>HERE</span></Link> to list your own! </p>
+        </FuncStyle>
     </HomeStyle>
     )}
 export default LandingPage;
@@ -117,6 +91,14 @@ const HomeStyle = styled.ul`
     flex-direction:column;
     justify-content:space-around;
     align-items:center;
+    background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80');
+    object-fit:cover;
+    background-repeat:repeat;
+    width:100%;
+    background-position:center;
+    background-size:100%;
+    top:0;
+    
    
   li {
         display: flex;
@@ -130,14 +112,23 @@ const HomeStyle = styled.ul`
         }
     }
     h2{
-            font-size:2rem;
+            font-size:1.4rem;
+            color:white;
+            background-color:rgb(287, 69, 69);
+            width:400px;
+            text-align:center;
+            margin-top:20px;
+            border-radius:10px;
         }
     span{
         font-weight:bold;
+        &:hover{
+            text-decoration:underline;
+            text-decoration-color:rgb(287, 69, 69);
+            cursor:pointer;
+        }
     }
-    span:hover{
-        cursor:pointer;
-    }
+    
     .styledLink{
         text-decoration:none;
         color:black;
@@ -146,4 +137,16 @@ const HomeStyle = styled.ul`
 const ListStyle = styled.ul`
     display:flex;
     flex-wrap:wrap;
+    /* background-image:url('https://images.unsplash.com/photo-1605319760321-91c129fd463a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1567&q=80'); */
+`
+const FuncStyle = styled.div`
+    width:100%;
+    background-color:rgba(255, 255, 255, 0.919);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:400px;
+    height:100px;
+    margin-bottom:20px;
 `

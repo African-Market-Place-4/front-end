@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import axios from 'axios';
+
 
 
 export default class Login extends Component {
-
+    
     constructor(props) {
         super(props)
     
@@ -25,9 +27,14 @@ export default class Login extends Component {
     }
 
     handleSubmit = event =>{
-        console.log("this is props",this.props)
-        alert(`${this.state.username} ${this.state.password}`)
-        event.preventDefault()
+        event.preventDefault();
+        axios.post('https://african-marketplace-4.herokuapp.com/api/auth/login', this.state)
+            .then(resp=>{
+                 localStorage.setItem('token',resp.data.token);
+            })
+            .catch(err=>{
+                console.log(err)
+            })
     }
    
     render() {
@@ -36,13 +43,13 @@ export default class Login extends Component {
                 <h3>Login</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input 
-                        type="email" 
-                        value={this.state.email}
-                        onChange={this.handleEmailChange}
+                        type="username" 
+                        value={this.state.username}
+                        onChange={this.handleUsernameChange}
                         className="form-control" 
-                        placeholder="Enter email" 
+                        placeholder="Enter username" 
                         />
                 </div>
 

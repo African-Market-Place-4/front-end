@@ -7,11 +7,10 @@ import axios from 'axios';
 const AddItem = () => {
     let navigate = useNavigate();
     const [item, setItem] = useState({
-        product_id: '',
         name: '',
-        price_usd: '',
+        price_usd: 0,
         description: '',
-        seller:''
+        seller:0
     });
 
     const handleChanges = event => {
@@ -22,27 +21,16 @@ const AddItem = () => {
     };
 
     const submitForm = event => {
-        // e.preventDefault();
-        // axios.post('BASE URL GOES HERE/items', item)
-        //     .then(resp=>{
-        //        setItems(resp.data)
-        //         setItem({
-        //             name: '',
-        //             price_usd: '',
-        //             description: '',
-        //             seller: ''
-        //             });
-        //         navigate('/');
-        //     })
-        //     .catch(err=>{
-        //         console.log(err)
-        //     })
-        axios.post('baseURL/auth/login',this.state)
-        .then(resp=>{
-            
-        })
-       navigate('/');
+        event.preventDefault();
+        axios.post('https://african-marketplace-4.herokuapp.com/api/items', item)
+            .then(resp=>{
+                navigate('/')
+            })
+            .catch(err=>{
+                console.log('error from axios',err)
+            })
     }
+    
 
     return (
         <div>
@@ -53,7 +41,7 @@ const AddItem = () => {
                     <input id="name"
                         type="text"
                         name="name"
-                        placeHolder="enter Name"
+                        placeholder="enter Name"
                         onChange={handleChanges}
                         value={item.name} />
                         <br/>
@@ -61,24 +49,24 @@ const AddItem = () => {
                     <input id="description"
                         type="text"
                         name="description"
-                        placeHolder="Provide Description"
+                        placeholder="Provide Description"
                         onChange={handleChanges}
                         value={item.description} />
                         <br/>
                         <label>Price</label>
-                    <input id="price"
+                    <input id="price_usd"
                         type="text"
-                        name="price"
-                        placeHolder="Enter Price"
+                        name="price_usd"
+                        placeholder="Enter Price"
                         onChange={handleChanges}
                         value={item.price_usd} />
                         <br/>
-                        <label>Location</label>
+                        <label>Seller</label>
                         
-                    <input id="location"
+                    <input id="seller"
                         type="text"
-                        name="location"
-                        placeHolder="Enter Location"
+                        name="seller"
+                        placeholder="Enter seller"
                         onChange={handleChanges}
                         value={item.seller} />
                     </div>
