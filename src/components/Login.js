@@ -25,6 +25,7 @@ export default class Login extends Component {
     }
 
     handleSubmit = event =>{
+        console.log("this is props",this.props)
         alert(`${this.state.username} ${this.state.password}`)
         event.preventDefault()
     }

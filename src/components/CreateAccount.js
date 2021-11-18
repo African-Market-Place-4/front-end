@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -13,8 +14,21 @@ const CreateAccount = (props) => {
             [event.target.name]: event.target.value
         });
     };
+    const navigate = useNavigate();
     const submitForm = event => {
-       
+        // e.preventDefault();
+        // axios.post('BASE URL GOES HERE/auth/register', user)
+        //     .then(resp=>{
+        //         setUser({
+        //          username:"",
+        //          password:""
+        //          });
+        //         navigate('/login');
+        //     })
+        //     .catch(err=>{
+        //         console.log(err)
+        //     })
+        navigate('/login');
     }
 
     return (
@@ -37,10 +51,8 @@ const CreateAccount = (props) => {
                         onChange={handleChanges}
                         value={user.password} />
                     </div>
+                    <button id="create-acct-button">Create Account</button>
             </form>
-            <div>
-                <button id="create-acct-button">Create Account</button>
-            </div>
             {/* PAGE CONTAINER ENDS HERE */}
         </div>
     )

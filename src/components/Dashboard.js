@@ -36,6 +36,24 @@ const Dashboard = () => {
 
 const [items, setItems] = useState(dummyData)
 
+    // Need to do!!
+    // 1)Make sure we are making axios call to the correct address.
+    // 2)Check response to see if we are getting data.
+    // 3)setItems to correct response data.
+    
+
+    // useEffect(()=> {
+    //     axiosWithAuth()
+    //         .get('/items')
+    //         .then(resp=>{
+    //             console.log(resp)  
+    //             setItems(resp)
+    //         })
+    //         .catch(err=>{
+    //             console.log(err)
+    //         })
+    // }, []);
+
     return (
         <div>
             <AddItem/>

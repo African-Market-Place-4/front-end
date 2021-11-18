@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 const AddItem = () => {
+    let navigate = useNavigate();
     const [item, setItem] = useState({
+        product_id: '',
         name: '',
+        price_usd: '',
         description: '',
-        price: '',
-        location: ''
+        seller:''
     });
 
     const handleChanges = event => {
@@ -18,7 +22,26 @@ const AddItem = () => {
     };
 
     const submitForm = event => {
-       
+        // e.preventDefault();
+        // axios.post('BASE URL GOES HERE/items', item)
+        //     .then(resp=>{
+        //        setItems(resp.data)
+        //         setItem({
+        //             name: '',
+        //             price_usd: '',
+        //             description: '',
+        //             seller: ''
+        //             });
+        //         navigate('/');
+        //     })
+        //     .catch(err=>{
+        //         console.log(err)
+        //     })
+        axios.post('baseURL/auth/login',this.state)
+        .then(resp=>{
+            
+        })
+       navigate('/');
     }
 
     return (
@@ -48,7 +71,7 @@ const AddItem = () => {
                         name="price"
                         placeHolder="Enter Price"
                         onChange={handleChanges}
-                        value={item.price} />
+                        value={item.price_usd} />
                         <br/>
                         <label>Location</label>
                         
@@ -57,12 +80,12 @@ const AddItem = () => {
                         name="location"
                         placeHolder="Enter Location"
                         onChange={handleChanges}
-                        value={item.location} />
+                        value={item.seller} />
                     </div>
             </form>
             <div>
                 <br/>
-                <button>Add Item</button>
+                <button onClick={submitForm}>Add Item</button>
             </div>
             {/* PAGE CONTAINER ENDS HERE */}
         </div>

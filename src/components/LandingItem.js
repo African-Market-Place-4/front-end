@@ -8,9 +8,9 @@ const LandingItem = (props) =>{
     <ItemStyle>
         <div>
             <p><span>Item:</span> {item.name}</p>
-            <p><span>Price:</span> {item.price}</p> 
+            <p><span>Price:</span> {item.price_usd}</p> 
             <p><span>Description:</span> {item.description}</p>
-            <p><span>Location:</span> {item.location}</p> 
+            {/* <p><span>Location:</span> {item.location}</p>  */}
         </div>
     </ItemStyle>
     )}

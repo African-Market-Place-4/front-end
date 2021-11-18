@@ -1,64 +1,64 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import LandingItem from './LandingItem'
-
+import LandingItem from './LandingItem';
+import axios from 'axios';
 const initialItems = [
     {
-        id: 1,
+        product_id: 1,
         name: 'eggs',
+        price_usd: '$3',
         description: 'white',
-        price: '$3',
-        location: 'US'
+        seller: 'US'
     },
     {   
-        id:2,
+        product_id:2,
         name: 'milk',
         description: 'white',
-        price: '$4',
-        location: 'US'
+        price_usd: '$4',
+        seller: 'US'
     },
     {
-        id:3,
+        product_id:3,
         name: 'Pineapple Juice',
+        price_usd: '$5',
         description: 'orange',
-        price: '$5',
-        location: 'Hawaii'
+        seller: 'Hawaii'
     },
     {
-        id:4,
+        product_id:4,
         name: 'Cheese',
+        price_usd: '$6',
         description: 'white',
-        price: '$6',
-        location: 'Italy'
+        seller: 'Italy'
     },
     {
-        id: 5,
+        product_id: 5,
         name: 'Chocolate',
+        price_usd: '$2',
         description: 'brown',
-        price: '$2',
-        location: 'Germany'
+        seller: 'Germany'
     },
     {   
-        id:6,
+        product_id:6,
         name: 'Rice',
+        price_usd: '$4',
         description: 'white',
-        price: '$4',
-        location: 'Spain'
+        seller: 'Spain'
     },
     {
-        id:7,
+        product_id:7,
         name: 'Wheat',
+        price_usd: '$5',
         description: 'golden',
-        price: '$5',
-        location: 'US'
+        seller: 'US'
     },
     {
-        id:8,
+        product_id:8,
         name: 'Wine',
+        price_usd: '$10',
         description: 'white',
-        price: '$10',
-        location: 'New Zealand'
+        seller: 'New Zealand'
     }
 ]
 
@@ -67,6 +67,22 @@ const LandingPage = () =>{
     const[items, setItems]=useState(initialItems)
     const [isToggled,setIsToggled]=useState(false)
 
+    // Need to do!!
+    // 1)Make sure we are making axios call to the correct address.
+    // 2)Check response to see if we are getting data.
+    // 3)setItems to correct response data.
+    
+
+    // useEffect(()=> {
+    //     axios.get('BASEURL/items')
+    //         .then(resp=>{
+    //             console.log(resp)  
+    //             setItems(resp)
+    //         })
+    //         .catch(err=>{
+    //             console.log(err)
+    //         })
+    // }, []);
 
     const toggle=()=>{
         setIsToggled(!isToggled)
@@ -86,7 +102,7 @@ const LandingPage = () =>{
         !isToggled &&
         <ListStyle>
             {items.map(item=>{
-            return <LandingItem key={item.id} item={item}/>
+            return <LandingItem key={item.product_id} item={item}/>
             })}
         </ListStyle>
         }
