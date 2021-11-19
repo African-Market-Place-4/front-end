@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Header = () =>{
     return(
     <HeaderStyle>
-        <h1>African Marketplace</h1>
+        <h1>𓃰 African Marketplace</h1>
         <NavContainer>
             <NavStyle>
                 <li><Link to="/">Home</Link></li>
@@ -33,9 +33,10 @@ const HeaderStyle = styled.div`
     h1{
         background-color:white;
         width:100%;
-        font-size:4rem;
+        font-size:2rem;
         margin:0;
         text-align:center;
+        font-weight:300;
     }
 
     p {

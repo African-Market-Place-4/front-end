@@ -97,7 +97,7 @@ const HomeStyle = styled.ul`
     width:100%;
     background-position:center;
     background-size:100%;
-    top:0;
+    margin:0;
     
    
   li {

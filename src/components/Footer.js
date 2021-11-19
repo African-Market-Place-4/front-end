@@ -15,13 +15,14 @@ export default function Footer(props) {
 }
 
 const FooterStyle = styled.div`
-    background-color:rgba(14, 12, 12, 0.956);;
+    background-color:rgba(14, 12, 12, 0.956);
     color:white;
     flex-direction:column;
     display:flex;
     align-items: center;
     justify-content: center;
     width:100%;
+    margin:0;
 
     address{
         display:flex;
