@@ -33,7 +33,7 @@ const HeaderStyle = styled.div`
     h1{
         background-color:white;
         width:100%;
-        font-size:2rem;
+        font-size:2.4rem;
         margin:0;
         text-align:center;
         font-weight:300;
