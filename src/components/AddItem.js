@@ -70,11 +70,8 @@ const AddItem = () => {
                         onChange={handleChanges}
                         value={item.seller} />
                     </div>
+                    <button onClick={submitForm} id='addbutton' className="btn btn-primary btn-block submit">Add Item</button>
             </form>
-            <div>
-                <br/>
-                <button onClick={submitForm}>Add Item</button>
-            </div>
             {/* PAGE CONTAINER ENDS HERE */}
         </div>
     )
