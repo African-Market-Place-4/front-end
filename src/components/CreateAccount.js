@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './AddItem.css'
 
 
 const CreateAccount = (props) => {
@@ -50,7 +51,7 @@ const CreateAccount = (props) => {
                         onChange={handleChanges}
                         value={user.password} />
                     </div>
-                    <button id="create-acct-button">Create Account</button>
+                    <button className="btn btn-primary btn-block submit" id="create-acct-button">Create Account</button>
             </form>
             {/* PAGE CONTAINER ENDS HERE */}
         </div>
