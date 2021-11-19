@@ -38,7 +38,7 @@ const initialItems = [
 
 const LandingPage = () =>{
     const[items, setItems]=useState(initialItems)
-    const [isToggled,setIsToggled]=useState(true)
+    const [isToggled,setIsToggled]=useState(false)
 
     // Need to do!!
     // 1)Make sure we are making axios call to the correct address.
@@ -63,7 +63,7 @@ const LandingPage = () =>{
 
     return(
     <HomeStyle>
-        <h2>See what our users have to offer!</h2>
+       <h2>See what our users have to offer!</h2>
         {isToggled && <ListStyle>
             <LandingItem item={items[0]}/>
             <LandingItem item={items[1]}/>
@@ -98,6 +98,9 @@ const HomeStyle = styled.ul`
     background-position:center;
     background-size:100%;
     margin:0;
+    min-height:100vh; 
+    box-sizing:border-box;
+    
     
    
   li {
@@ -140,9 +143,11 @@ const FuncStyle = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:400px;
+    width:270px;
     height:100px;
     margin-bottom:20px;
+    margin-top:20px;
+    padding:20px;
 `
 const StySpan=styled.span`
     font-weight:bold;

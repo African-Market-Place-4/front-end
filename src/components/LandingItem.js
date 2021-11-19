@@ -8,7 +8,7 @@ const LandingItem = (props) =>{
     <ItemStyle>
         <div>
             <p><StyledSpan>Item:</StyledSpan> {item.name}</p>
-            <p><StyledSpan>Price:</StyledSpan> {item.price_usd}</p> 
+            <p><StyledSpan>Price:</StyledSpan> ${item.price_usd}</p> 
             <p><StyledSpan>Description:</StyledSpan> {item.description}</p>
             {/* <p><span>Location:</span> {item.location}</p>  */}
         </div>
