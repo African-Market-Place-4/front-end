@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import './AddItem.css';
 
 
 const AddItem = () => {
@@ -33,7 +33,7 @@ const AddItem = () => {
     
 
     return (
-        <div>
+        <div className='create-account-page'>
             <form onSubmit={submitForm}>
                 <div>
                     <h2>Add Item</h2>

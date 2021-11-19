@@ -79,8 +79,8 @@ const LandingPage = () =>{
         </ListStyle>
         }
         <FuncStyle>
-            <p>Click <span onClick={toggle}>HERE</span> {isToggled ? 'to browse more items...' : 'to hide items...'}</p>
-            <p>or click <Link to="/additem" className='styledLink'><span>HERE</span></Link> to list your own! </p>
+            <p>Click <StySpan onClick={toggle}>HERE</StySpan> {isToggled ? 'to browse more items...' : 'to hide items...'}</p>
+            <p>or click <Link to="/additem" className='styledLink'><StySpan>HERE</StySpan></Link> to list your own! </p>
         </FuncStyle>
     </HomeStyle>
     )}
@@ -120,13 +120,7 @@ const HomeStyle = styled.ul`
             margin-top:20px;
             border-radius:10px;
         }
-    span{
-        font-weight:bold;
-        &:hover{
-            text-decoration:underline;
-            text-decoration-color:rgb(287, 69, 69);
-            cursor:pointer;
-        }
+   
     }
     
     .styledLink{
@@ -149,4 +143,12 @@ const FuncStyle = styled.div`
     width:400px;
     height:100px;
     margin-bottom:20px;
+`
+const StySpan=styled.span`
+    font-weight:bold;
+        &:hover{
+            text-decoration:underline;
+            text-decoration-color:rgb(287, 69, 69);
+            cursor:pointer;
+        }
 `
