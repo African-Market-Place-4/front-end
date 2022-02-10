@@ -49,7 +49,16 @@ const LandingPage = () =>{
     useEffect(()=> {
         axios.get('https://african-marketplace-4.herokuapp.com/api/items')
             .then(resp=>{
-                setItems(resp.data)
+                let itemList = resp.data
+                console.log(itemList)
+                let newList = []
+                for(let i =0;i<itemList.length;i++){
+                    let itemToUse = itemList[i]
+                    if(itemToUse.name !== 'alex' && itemToUse.name !=='Alex Hoskins' && itemToUse.name !=='blue'&& itemToUse.name !=='orange'&& itemToUse.name !=='joseph' && itemToUse.name !=='red'){
+                        newList.push(itemToUse)
+                    }
+                }
+                setItems(newList)
             })
             .catch(err=>{
                 console.log('this is err',err)
