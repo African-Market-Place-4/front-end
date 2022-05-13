@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# African Marketplace
+
+This directory is a web application called African Marketplace. The purpose is to create a platform where local sellers can market their products to customers. The application was created with React and Redux was utilized for state management.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployed Project
+
+The application is deployed using Vercel and can be viewed by clicking the link below.
+
+Live Example: https://african-marketplace-khaki.vercel.app/
 
 ## Available Scripts
 
