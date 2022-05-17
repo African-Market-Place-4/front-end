@@ -4,7 +4,7 @@ This directory is a web application called African Marketplace. The purpose is t
 
 #### Link to project: https://african-marketplace-khaki.vercel.app/
 <br/>
-<a href='https://workspace-zeta.vercel.app/' target='_blank'><img src='https://lh3.googleusercontent.com/JLyLl0gMfixeVgTzWgQvLsQGQHtUiRIWeoYXx71Lra9zoaLWBL-tLuI08ICiXNfB11GtY2ImLXXPWM_3Pj94izeVnKgqUiSxNsDZHDU_65y5ZjAQBZBl7zgQZiBfLvx4_JNm40qNsg=w600' alt='WorkSpace'/></a>
+<img src='https://lh3.googleusercontent.com/A169yBdnrC9g5MQK8-9iquU6cpQpqPjD5OT0WR04BFG6zUvdGxN099UEkVglzBoMumcU6cOz-SGgUo-zITVpGkanZ-4koshjC-a8ZsDl7EogP3reQjCPXpnuyo8WV6q0yUNrVDU5zA=w600' alt='African Marketplace'/>
 
 ## How It's Made:
 **Tech used:** HTML, CSS, JavaScript, React, JWT-Authentication, Axios
