@@ -1,6 +1,6 @@
 # African Marketplace
 
-This directory is a web application called African Marketplace. The purpose is to create a platform where local sellers can market their products to customers. The application was created with React and Redux was utilized for state management. The application is deployed using Vercel and can be viewed by clicking the link below.
+This directory is a web application called African Marketplace. The purpose is to create a platform where local sellers can market their products to customers. The application was created with React and Redux. The application is deployed using Vercel and can be viewed by clicking the link below.
 
 #### Link to project: https://african-marketplace-khaki.vercel.app/
 <br/>
